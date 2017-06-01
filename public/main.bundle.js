@@ -1952,7 +1952,7 @@ UserComponent = __decorate([
 // The file contents for the current environment will overwrite these during build.
 var environment = {
     production: false,
-    BASE_URL: "http://localhost:3000",
+    BASE_URL: "https://content-hub.herokuapp.com/",
 };
 //# sourceMappingURL=environment.js.map
 

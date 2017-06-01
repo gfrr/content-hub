@@ -45,7 +45,7 @@ app.use("/", auth);
 app.use("/", users);
 app.use("/", search);
 app.use((req, res, next)=>{
-  res.send(__dirname + '/public/index.html');
+  res.sendfile(__dirname + '/public/index.html');
 });
 
 

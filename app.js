@@ -38,12 +38,15 @@ app.use(bodyParser.urlencoded({
   extended: false
 }));
 app.use(cookieParser());
+
 app.use(express.static(path.join(__dirname, 'public')));
 
+app.use("/", auth);
 app.use("/", users);
 app.use("/", search);
-app.use("/", auth);
-
+app.use((req, res, next)=>{
+  res.send(__dirname + '/public/index.html');
+});
 
 
 // catch 404 and forward to error handler

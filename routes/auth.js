@@ -55,6 +55,7 @@ router.post("/login", function(req, res) {
 });
 
 router.post("/signup", (req, res, next) => {
+  console.log("signup called backend");
   const username = req.body.username;
   const password = req.body.password;
 

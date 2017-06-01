@@ -13,10 +13,10 @@ const search = require("./routes/search");
 const users = require("./routes/users");
 const compression = require('compression');
 const app = express();
-const corsOptions = {
-  credentials: true,
-  origin: 'http://localhost:4200'
-};
+// const corsOptions = {
+//   credentials: true,
+//   origin: 'http://localhost:4200'
+// };
 
 dotenv.config();
 dotenv.load();
@@ -28,8 +28,8 @@ app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
 //change before deploy
-app.options('*', cors(corsOptions));
-app.use(cors(corsOptions));
+// app.options('*', cors(corsOptions));
+// app.use(cors(corsOptions));
 app.use(passport.initialize());
 app.use(compression());
 app.use(logger('dev'));
@@ -61,7 +61,6 @@ app.use((err, req, res, next) => {
   // set locals, only providing error in development
   res.locals.message = err.message;
   res.locals.error = req.app.get('env') === 'development' ? err : {};
-
   // render the error page
   res.status(err.status || 500);
   res.render('error');
